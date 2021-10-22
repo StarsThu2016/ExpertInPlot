@@ -1,7 +1,7 @@
 '''
-Plot scientific figures and fine polish it for the CS conferences.
+Plot a scientific figure, in 3.2 inch width, and polish it for the CS conferences.
 Usage:
-$ python3 SamplePlt-3-2inch.py
+$ python3 plot_3_2_inch.py
 
 Author: Ran Xu
 '''
@@ -9,21 +9,21 @@ Author: Ran Xu
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.plot(figsize=(3.2, 2.4), dpi=300)
+plt.figure(figsize=(3.2, 2.4), dpi=300)
 plt.gca().set_position([0.15, 0.15, 0.81, 0.77])
 plt.gca().spines['top'].set_color('none')
 plt.gca().spines['right'].set_color('none')
-plt.gca().set_xlabel('Number of A and B', fontsize=16) # <=15 chacters
-plt.gca().xaxis.set_label_coords(0.5, -0.11)
+plt.gca().set_xlabel('Number of A and B', fontsize=8)  # <=15 chacters
+plt.gca().xaxis.set_label_coords(0.5, -0.12)
 plt.gca().set_xlim([0, 10])
 plt.gca().set_xticks(np.arange(1, 10))
-plt.gca().set_xticklabels(labels=[str(x) for x in np.arange(1, 10)], fontsize=16)
+plt.gca().set_xticklabels(labels=[str(x) for x in np.arange(1, 10)], fontsize=8)
 
-plt.gca().set_ylabel('Exection time of baseline (ms)', fontsize=16)
-plt.gca().yaxis.set_label_coords(-0.11, 0.5)
+plt.gca().set_ylabel('Exection time of baseline (ms)', fontsize=8)
+plt.gca().yaxis.set_label_coords(-0.12, 0.5)
 plt.gca().set_ylim([1.5, 6.5])
 plt.gca().set_yticks(np.arange(2, 6.1, 0.5))
-plt.gca().set_yticklabels(labels=[str(x) for x in np.arange(2, 6.1, 0.5)], fontsize=16)
+plt.gca().set_yticklabels(labels=[str(x) for x in np.arange(2, 6.1, 0.5)], fontsize=8)
 plt.gca().set_axisbelow(True)
 plt.grid()
 
@@ -53,9 +53,9 @@ plt.bar(x, thirdMeans, yerr=thirdStd, bottom=secondMeans+firstMeans, width=0.8, 
 
 # Circle and text
 plt.scatter(6, 6, c='r', marker='o', s=16)
-plt.text(5.6, 5.7, 'goal', fontsize=16)
+plt.text(5.6, 5.7, 'goal', fontsize=8)
 
 #plt.legend(loc='upper right', fontsize=8)
-plt.legend(ncol=3, loc='upper center', bbox_to_anchor=(0.5, 1.10), fontsize=16)
-plt.savefig('SampleFig-3-2-inch.png')
+plt.legend(ncol=3, loc='upper center', bbox_to_anchor=(0.5, 1.10), fontsize=8)
+plt.savefig('figure_3_2_inch.png')
 #plt.show()
