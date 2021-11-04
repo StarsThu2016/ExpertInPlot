@@ -27,6 +27,11 @@ plt.gca().set_yticklabels(labels=[str(x) for x in np.arange(2, 6.1, 0.5)], fonts
 plt.gca().set_axisbelow(True)
 plt.grid()
 
+# colors and markers
+colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 
+          'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan', 'xkcd:lime']
+markers = 'x^v<>s+'
+
 # Draw lines
 plt.plot([2, 3, 4, 5], [6, 6, 6, 6], c='b', linestyle='-', lw=2, label='li.')
 plt.plot([2, 3, 4, 5], [3, 4, 5, 6], c='r', linestyle='--', lw=2)
